@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS bids(
+   ItemID   INTEGER  NOT NULL
+  ,UserID   VARCHAR(64) NOT NULL
+  ,Location VARCHAR(64) NOT NULL
+  ,Country  VARCHAR(64) NOT NULL
+  ,Time     DATETIME  NOT NULL
+  ,Amount   NUMERIC(8,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS output(
+   ItemID         INTEGER  NOT NULL 
+  ,Name           VARCHAR(64) NOT NULL
+  ,Currently      NUMERIC(8,2) NOT NULL
+  ,Buy_Price      NUMERIC(8,2) NOT NULL
+  ,First_Bid      NUMERIC(8,2) NOT NULL
+  ,Number_of_Bids INTEGER  NOT NULL
+  ,Top_Bidder     VARCHAR(64) NOT NULL
+  ,Location       VARCHAR(64) NOT NULL
+  ,Country        VARCHAR(64) NOT NULL
+  ,Started        DATETIME NOT NULL
+  ,Ends           DATETIME NOT NULL
+  ,Description    VARCHAR(13533) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS categories(
+   ItemID   INTEGER  NOT NULL
+  ,Category VARCHAR(64) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS sellers(
+   ItemID INTEGER  NOT NULL
+  ,UserID VARCHAR(64) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users(
+  UID VARCHAR(64) NOT NULL
+  , Rating INTEGER  NOT NULL
+  , Password VARCHAR(256)
+);

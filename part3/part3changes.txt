@@ -1,0 +1,4 @@
+Changes made:
+- Added password field to users
+- Removed unnecessary foreign keys
+

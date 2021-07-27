@@ -1,0 +1,23 @@
+There are 11 pages in this project which are listed below:
+- bid.php: The user interface for bidding.
+- error.php: The error-handling page.
+- index.php: The index page.
+- login.php: The user interface for logging in.
+- logout.php: A helper/intermediary page that facilitates clearing the login cookies.
+- parseitem.php: A helper page for handling the insertion of items into the table "output."
+- placebid.php: A helper page for handling the insertion of bids into the table "bids."
+- results.php: A page that shows the search results and has links to the bidding pages.
+- search.php: The search portal.  Also has links to the logout and sell pages.
+- sell.php: The user interface for selling things.
+- verif.php: A helper page for recognizing users/passwords that sends bad attempts back to the login page.  It also makes the cookies and encrypts passwords with RIPEMD160.
+
+Invalid operations that are not handled by input constraints or redirects in the case of empty cookies should be routed to the error page.
+
+Proper operation of this site should go as follows:
+1. The user enters their login credentials.  If they are wrong, they will recieve a notice on verif.php and a link back to the login page.
+2. The user then arrives at the search page.  They can log out, list an item to sell, or search for an item based on certain constraints.
+2a. The user chooses to log out.  The cookies are wiped and the user is redirected to the login page.  Attempts to access the database-modifying portions of the site wihtout logging in again will result in the user getting sent back to the login page.
+2b. The user wants to list something for sale.  They click on the appropriate link on the bottom on the page.  They then enter the item name, minimum price, buy price, their location and country, a description, and a comma-delimited string of categories.  They then click the "Submit item" button and their item will be added to the database.
+2c. The user wants to search for something.  They first decide which of the three radio buttons to press then type their search query and click the "Search" button.
+3. The user clicked the "Search" button and arrived at the results page.  If they see something they want to bid on, they can click on the "Bid Now!" link on the right side of each row.  In the event of a closed aucton, the user will be told that they are trying to access a closed auction and routed to the search page.
+4. Should the user click on an open auction, they will be taken to the bidding UI page and can input the amount of money they wish to spend, after which the site will put a valid bid into the database and update the information on the page if necessary.  The user can then go back to the search page.
